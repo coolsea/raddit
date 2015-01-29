@@ -8,6 +8,24 @@
 </head>
 <body>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+<% end %>
+
+<% if user_signed_in? %>
+  <ul>
+    <li><%= link_to '發表新連結', new_link_path %></li>
+    <li><%= link_to '帳戶資訊', edit_user_registration_path %></li>
+    <li><%= link_to '登出', destroy_user_session_path, :method => :delete %></li>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to '註冊', new_user_registration_path %></li>
+    <li><%= link_to '登入', new_user_session_path %></li>
+  </ul>
+<% end %>
+
+
 <%= yield %>
 
 </body>
