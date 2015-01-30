@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #客製化程式使用到的gem
 gem 'devise'
+gem 'bootstrap-sass'
+gem 'acts_as_votable'
 
 
 
